@@ -31,6 +31,12 @@ $a = 10;
 $b = 15;
 $c = -10;
 
+/**
+ * @param $a
+ * @param $b
+ * @param $c
+ * @return array|bool|float|int
+ */
 function quadraticEquation ($a, $b, $c) {
     $d = ($b ** 2) - (4 * $a * $c);
 
@@ -57,22 +63,34 @@ if (gettype($resultQuadraticEquation) == 'array'){
 }
 
 //Task 3
-$i = 0;
+
 $digits = array(2, -10, -2, 4, 5, 1, 6, 200, 1.6, 95);
+/**
+ * @param $digits array
+ * @return mixed
+ */
 function deleteNegtives($digits) {
-    foreach ($digits as $positiveDigits) {
+    foreach ($digits as $key => $positiveDigits) {
         if ($positiveDigits < 0) {
-            unset($positiveDigits);
+            unset($digits[$key]);
         }
-        return $positiveDigits;
     }
-
+    return $digits;
 }
-
 $digits = deleteNegtives($digits);
 print_r($digits);
-//foreach ($digits as $positive) {
-    //echo ($positive) . '</br>';
-//}
-//echo $digits;
+
+//Task 4
+/**
+ * @param $digits array for link
+ */
+function deleteNegtivesWithLink(&$digits) {
+    foreach ($digits as $key => $positiveDigits) {
+        if ($positiveDigits < 0) {
+            unset($digits[$key]);
+        }
+    }
+}
+deleteNegtivesWithLink($digits);
+print_r($digits);
 ?>
