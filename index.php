@@ -56,4 +56,23 @@ if (gettype($resultQuadraticEquation) == 'array'){
     echo 'false';
 }
 
+//Task 3
+$i = 0;
+$digits = array(2, -10, -2, 4, 5, 1, 6, 200, 1.6, 95);
+function deleteNegtives($digits) {
+    foreach ($digits as $positiveDigits) {
+        if ($positiveDigits < 0) {
+            unset($positiveDigits);
+        }
+        return $positiveDigits;
+    }
+
+}
+
+$digits = deleteNegtives($digits);
+print_r($digits);
+//foreach ($digits as $positive) {
+    //echo ($positive) . '</br>';
+//}
+//echo $digits;
 ?>
