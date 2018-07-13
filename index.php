@@ -15,7 +15,7 @@ function shoppingCart($products)
     $totalQuantity = 0;
 
     foreach ($products as $product) {
-        $totalPrice += $product['price'];
+        $totalPrice += $product['price'] * $product['quantity'];
         $totalQuantity += $product['quantity'];
     }
     $shoppingCart = array('price' => $totalPrice, 'quantity' => $totalQuantity);
